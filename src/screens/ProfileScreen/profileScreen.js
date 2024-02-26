@@ -1,9 +1,9 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import { useMyContext } from '../../contextProvider/myContext';
+import {View, Text, StyleSheet, Button} from 'react-native';
+import {useMyContext} from '../../contextProvider/myContext';
 
-const ProfileScreen = ({ route }) => {
-//   const { mobileNumber, otp } = route.params;
+const ProfileScreen = ({route}) => {
+  //   const { mobileNumber, otp } = route.params;
   const {data} = useMyContext();
 
   return (
@@ -11,6 +11,9 @@ const ProfileScreen = ({ route }) => {
       <Text style={styles.title}>Profile</Text>
       <Text>Mobile Number: {data.mobileNumber}</Text>
       <Text>OTP: {data.otp}</Text>
+      <View style={styles.container2}>
+        <Button title="Logout" onPress={() => navigation.navigate('Login')} />
+      </View>
     </View>
   );
 };
@@ -21,6 +24,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     paddingHorizontal: 20,
+  },
+  container2: {
+    paddingVertical: 30,
   },
   title: {
     fontSize: 24,
