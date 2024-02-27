@@ -1,15 +1,16 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {useState} from 'react';
-import {View, Text, TextInput, Button, StyleSheet} from 'react-native';
-import { useMyContext } from '../../contextProvider/myContext';
+import {View, Text, TextInput, StyleSheet} from 'react-native';
+import {useMyContext} from '../../contextProvider/myContext';
+import ButtonComponent from '../../components/ButtonComponent/buttonComponent';
 
 const LoginScreen = ({navigation}) => {
   const [mobileNumber, setMobileNumber] = useState('');
-  const { data, setData } = useMyContext();
+  const {data, setData} = useMyContext();
 
   const handleLogin = () => {
-    setData({mobileNumber:mobileNumber, otp: '1234'});
-    console.log('context data:',data);
+    setData({mobileNumber: mobileNumber, otp: '1234'});
+    console.log('context data:', data);
     navigation.navigate('VerifyOTP');
   };
 
@@ -29,9 +30,9 @@ const LoginScreen = ({navigation}) => {
         autoCapitalize="none"
       />
       <View style={{alignItems: 'center'}}>
-        <Button title="Login" onPress={handleLogin} />
+        <ButtonComponent title={'Login'} onPress={handleLogin} />
         <Text> if don't have account ? Register first</Text>
-        <Button title="Register" onPress={handleRegistration} />
+        <ButtonComponent title="Register" onPress={handleRegistration} />
       </View>
     </View>
   );

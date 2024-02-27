@@ -1,15 +1,17 @@
-import React, { useState } from 'react';
-import { View, Text, TextInput, Button, Alert, StyleSheet } from 'react-native';
-import { useMyContext } from '../../contextProvider/myContext';
+import React, {useState} from 'react';
+import {View, Text, TextInput, Alert, StyleSheet} from 'react-native';
+import {useMyContext} from '../../contextProvider/myContext';
+import ButtonComponent from '../../components/ButtonComponent/buttonComponent';
 
-const VerifyOTPScreen = ({ navigation }) => {
-  const { data, setData } = useMyContext();
-console.log('VerifyOTPScreen called', data);
+const VerifyOTPScreen = ({navigation}) => {
+  const {data, setData} = useMyContext();
+  console.log('VerifyOTPScreen called', data);
   const [otp, setOtp] = useState('');
 
   const handleVerifyOTP = () => {
     // Here you can implement your verification logic
-    if (otp === data.otp) { // Example OTP, replace with your actual verification logic
+    if (otp === data.otp) {
+      // Example OTP, replace with your actual verification logic
       // Navigate to the next screen upon successful verification
       navigation.navigate('App');
     } else {
@@ -27,7 +29,7 @@ console.log('VerifyOTPScreen called', data);
         onChangeText={setOtp}
         keyboardType="numeric"
       />
-      <Button title="Verify OTP" onPress={handleVerifyOTP} />
+      <ButtonComponent title="Verify OTP" onPress={handleVerifyOTP} />
     </View>
   );
 };

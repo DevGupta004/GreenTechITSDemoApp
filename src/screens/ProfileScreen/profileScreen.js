@@ -1,7 +1,8 @@
 import React from 'react';
-import {View, Text, StyleSheet, Button} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
 import {useMyContext} from '../../contextProvider/myContext';
-import { useNavigation } from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
+import ButtonComponent from '../../components/ButtonComponent/buttonComponent';
 
 const ProfileScreen = () => {
   const {data} = useMyContext();
@@ -13,7 +14,10 @@ const ProfileScreen = () => {
       <Text>Mobile Number: {data.mobileNumber}</Text>
       <Text>OTP: {data.otp}</Text>
       <View style={styles.container2}>
-        <Button title="Logout" onPress={() => navigation.navigate('Login')} />
+        <ButtonComponent
+          title="Logout"
+          onPress={() => navigation.navigate('Login')}
+        />
       </View>
     </View>
   );

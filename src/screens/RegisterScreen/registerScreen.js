@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet, Alert } from 'react-native';
+import React, {useState} from 'react';
+import {View, Text, TextInput, StyleSheet, Alert} from 'react-native';
+import ButtonComponent from '../../components/ButtonComponent/buttonComponent';
 
 const RegisterScreen = ({navigation}) => {
   const [name, setName] = useState('');
@@ -22,7 +23,7 @@ const RegisterScreen = ({navigation}) => {
     setPassword('');
     setConfirmPassword('');
     navigation.navigate('Login');
-    Alert.alert('Registration Success')
+    Alert.alert('Registration Success');
   };
 
   return (
@@ -63,7 +64,7 @@ const RegisterScreen = ({navigation}) => {
         onChangeText={setConfirmPassword}
         secureTextEntry
       />
-      <Button title="Register" onPress={handleRegister} />
+      <ButtonComponent title="Register" onPress={handleRegister} />
     </View>
   );
 };
