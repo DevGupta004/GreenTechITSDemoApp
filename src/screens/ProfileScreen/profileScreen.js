@@ -1,10 +1,11 @@
 import React from 'react';
 import {View, Text, StyleSheet, Button} from 'react-native';
 import {useMyContext} from '../../contextProvider/myContext';
+import { useNavigation } from '@react-navigation/native';
 
-const ProfileScreen = ({navigation}) => {
-  //   const { mobileNumber, otp } = route.params;
+const ProfileScreen = () => {
   const {data} = useMyContext();
+  const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
