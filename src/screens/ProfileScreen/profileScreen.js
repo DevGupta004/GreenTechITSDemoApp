@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, StyleSheet, Button} from 'react-native';
 import {useMyContext} from '../../contextProvider/myContext';
 
-const ProfileScreen = ({route}) => {
+const ProfileScreen = ({navigation}) => {
   //   const { mobileNumber, otp } = route.params;
   const {data} = useMyContext();
 
