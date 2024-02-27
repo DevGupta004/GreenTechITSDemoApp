@@ -25,7 +25,7 @@ const LoginScreen = ({navigation}) => {
         placeholder="Mobile Number"
         value={mobileNumber}
         onChangeText={setMobileNumber}
-        keyboardType="Mobile"
+        keyboardType="numeric"
         autoCapitalize="none"
       />
       <View style={{alignItems: 'center'}}>
